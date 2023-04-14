@@ -1,8 +1,12 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/app.js',
+  entry: './src/app.tsx',
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js']
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
@@ -16,9 +20,9 @@ module.exports = {
   },
   module: {
     rules: [
-      { 
-        test: /\.css$/i, 
-        use: ['style-loader', 'css-loader'] 
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader']
       },
       {
         test: /\.m?js$/i,
@@ -29,7 +33,16 @@ module.exports = {
             presets: ['@babel/preset-env']
           }
         }
+      },
+      {
+        test: /\.tsx?$/,
+        loader: 'awesome-typescript-loader'
       }
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    })
+  ]
 };

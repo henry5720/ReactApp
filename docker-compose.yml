@@ -1,9 +1,11 @@
 version: "3.9"  # optional since v1.27.0
 services:
-  web:
+  my-container:
     build: .
     ports:
-      - "3000:3000"
+      - "9000:9000"
     volumes:
-      - ./:/test:ro
-      - /test/node_modules
+      - ./:/ReactApp:ro
+      - /ReactApp/node_modules
+    tmpfs:
+      - /ReactApp/node_modules

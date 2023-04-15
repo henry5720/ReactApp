@@ -69,12 +69,19 @@ class LifeCircleContainer extends React.Component{
     // state 也可以使用屬性聲明的形式初始化
     state = {
         text: "父組件的文本",
+        ownText: "僅僅和父組件有關的文本",
         hideChild: false
     };
     // 點擊按鈕, 修改父組件文本內容的方法
     changeText=()=>{
         this.setState({
             text: "修改後的父組件文本"
+        });
+    }
+    // 點擊按鈕, 修改父組件文本內容的方法
+    changeOwnText=()=>{
+        this.setState({
+            ownText: "修改後的父組件自有文本"
         });
     }
     // 點擊按鈕, 隱藏(卸載)LifeCircle組件的方法
@@ -86,12 +93,17 @@ class LifeCircleContainer extends React.Component{
     render(): React.ReactNode {
         return (
             <div className='fatherContent'>
+                {/* 新的button按鈕 */}
+                <button onClick={this.changeOwnText} className='changeText'>
+                    修改父組件自有文本內容
+                </button>
                 <button onClick={this.changeText} className='changeText'>
                     修改父組件文本內容
                 </button>
                 <button onClick={this.hideChild} className='hideChild'>
                     隱藏子組件
                 </button>
+                <p>{this.state.ownText}</p>
                 {this.state.hideChild?null:<LifeCircle text={this.state.text}/>}
             </div>
         )

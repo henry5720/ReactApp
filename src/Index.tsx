@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { createRoot } from 'react-dom/client';
+import React from 'react';
 import styled from 'styled-components';
 import './css/initialize.css'
 

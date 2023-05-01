@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-const widthAndHeight:Array<number>=[50, 50]
+const widthAndHeight:Array<number>=[50, 50];
 
 // Array<number> == number[]
 const H1 = styled.h1<{ widthAndHeight?: Array<number> }>`

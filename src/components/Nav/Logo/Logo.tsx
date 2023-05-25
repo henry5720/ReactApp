@@ -7,6 +7,7 @@ const widthAndHeight:Array<number>=[50, 50];
 const H1 = styled.h1<{ widthAndHeight?: Array<number> }>`
     display: flex;
     justify-content: center;
+    margin: 0;
     width: ${widthAndHeight[0]}px;
     height: ${widthAndHeight[1]}px;
     background-color: slategrey;

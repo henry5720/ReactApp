@@ -42,7 +42,7 @@ const SearchBox = () => {
     return (
         <FormPanel>
             <Icon></Icon>
-            <Input placeholder="例: 台積電 eps"/>
+            <Input placeholder="例: test"/>
             <RecordBtn></RecordBtn>
         </FormPanel>
     );
